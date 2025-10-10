@@ -17,9 +17,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Portafolio - Desarrollador de Software",
-  description: "Portafolio profesional de desarrollador de software",
-  generator: "v0.app",
+  title: "Dariohg - Portafolio",
+  description: "Desarrollador de Software",
 }
 
 export default function RootLayout({
