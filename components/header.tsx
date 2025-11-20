@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Moon, Sun, Menu, X } from "lucide-react"
+import { Magnetic } from "@/components/ui/magnetic"
 
 export function Header() {
   const [isDark, setIsDark] = useState(false)
@@ -33,7 +34,6 @@ export function Header() {
     { href: "#proyectos", label: "Proyectos" },
     { href: "#experiencia", label: "Experiencia" },
     { href: "#educacion", label: "Educación" },
-    { href: "#blog", label: "Blog" },
     { href: "#contacto", label: "Contacto" },
   ]
 
@@ -56,6 +56,7 @@ export function Header() {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => (
+                  <Magnetic key={link.href}>
                 <Link
                   key={link.href}
                   href={link.href}
@@ -64,6 +65,7 @@ export function Header() {
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full" />
                 </Link>
+                  </Magnetic>
               ))}
 
               <Button

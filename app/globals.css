@@ -351,3 +351,12 @@
     transform: scale(1);
   }
 }
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, input, textarea, [role="button"] {
+    cursor: none;
+  }
+}

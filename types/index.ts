@@ -44,4 +44,5 @@ export interface Education {
   period: string
   description?: string
   type: "degree" | "certification" | "course"
+  badgeId?: string
 }
