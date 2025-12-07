@@ -50,7 +50,7 @@ export function Header() {
               href="#inicio"
               className="text-xl sm:text-2xl font-bold tracking-tight font-[family-name:var(--font-caveat)] hover:scale-110 transition-transform duration-300"
             >
-              {"<Dariohg />"}
+              {"<Dariohg/>"}
             </Link>
 
             {/* Desktop Navigation */}

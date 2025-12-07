@@ -11,7 +11,7 @@ import {
     DialogTrigger,
 } from '@/components/ui/dialog'
 import { ExternalLink } from 'lucide-react'
-import { Spinner } from '@/components/ui/spinner' // Asegúrate de tener este componente o usa un texto
+import { Spinner } from '@/components/ui/spinner'
 
 interface CredlyBadgeModalProps {
     badgeId: string

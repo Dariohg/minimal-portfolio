@@ -1,4 +1,3 @@
-// app/page.tsx
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
@@ -29,11 +28,11 @@ export default function Home() {
             </main>
             <Footer />
 
-            {/* 2. AÑADE ESTE SCRIPT (¡SIN 'onLoad'!) */}
+
             <Script
                 id="credly-api-script"
                 src="https://cdn.credly.com/assets/api.js"
-                strategy="lazyOnload" // Carga el script después de que la página sea interactiva
+                strategy="lazyOnload"
             />
         </div>
     )
