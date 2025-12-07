@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button"
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { TiltCard } from "@/components/ui/tilt-card"
-import { ScrollAnimation } from "@/components/ui/scroll-animation" // Trigger seguro
+import { ScrollAnimation } from "@/components/ui/scroll-animation"
 
-// Parallax INTERNO de la imagen (este sí puede ser Scrub porque está contenido)
 function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
@@ -41,11 +40,10 @@ export function Projects() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {featuredProjects.map((project, idx) => (
-                // Animación limpia: Entra desde abajo y se queda fija
                 <ScrollAnimation
                     key={project.id}
                     direction="up"
-                    delay={idx * 0.15} // Efecto escalera
+                    delay={idx * 0.15}
                     className="h-full"
                     viewportAmount={0.2}
                 >
@@ -54,9 +52,24 @@ export function Projects() {
                         href={`/proyectos/${project.id}`}
                         className="group sketch-box p-4 bg-card hover:translate-x-1 hover:translate-y-1 transition-all block h-full"
                     >
+
                       <div className="aspect-video overflow-hidden sketch-border mb-4 relative">
-                        <ParallaxImage src={project.image || "/placeholder.svg"} alt={project.title} />
+                        {project.image && typeof project.image === 'string' ? (
+                            <ParallaxImage src={project.image} alt={project.title} />
+                        ) : (
+                            <div
+                                className="flex h-full w-full items-center justify-center bg-muted/80"
+                                style={{
+                                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")`
+                                }}
+                            >
+                              <span className="text-xl sm:text-2xl md:text-3xl font-bold font-[family-name:var(--font-caveat)] uppercase text-primary/70 px-4 text-center">
+                                {project.title}
+                              </span>
+                            </div>
+                        )}
                       </div>
+
                       <div className="space-y-2">
                         <p className="text-xs text-muted-foreground tracking-wide uppercase font-[family-name:var(--font-caveat)]">{project.category}</p>
                         <h3 className="text-xl font-semibold font-[family-name:var(--font-caveat)] group-hover:sketch-underline">{project.title}</h3>

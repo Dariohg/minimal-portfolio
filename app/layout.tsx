@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Caveat, Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 import { SmoothScroll } from "@/components/smooth-scroll"
@@ -39,7 +38,6 @@ export default function RootLayout({
         <CustomCursor />
         <SmoothScroll>
             <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-            <Analytics />
         </SmoothScroll>
         </body>
         </html>

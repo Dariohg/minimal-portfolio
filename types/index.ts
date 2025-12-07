@@ -18,7 +18,7 @@ export interface Project {
   description: string
   longDescription: string
   category: string
-  image: string
+  image?: string | null
   stack: string[]
   links: {
     demo?: string
