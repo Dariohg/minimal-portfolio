@@ -8,6 +8,7 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { TiltCard } from "@/components/ui/tilt-card"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
+import { ProjectsBanner } from "@/components/ui/projects-banner"
 
 function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const ref = useRef(null)
@@ -27,17 +28,14 @@ export function Projects() {
   return (
       <section id="proyectos" className="container mx-auto px-4 sm:px-6 py-20 md:py-32 overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <ScrollAnimation direction="down">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 font-[family-name:var(--font-caveat)] sketch-underline inline-block">
-                Proyectos Destacados
-              </h2>
-            </ScrollAnimation>
-            <ScrollAnimation direction="up" delay={0.2}>
-              <p className="text-muted-foreground text-lg">Una selección de mis trabajos más recientes.</p>
-            </ScrollAnimation>
-          </div>
 
+          {/* Banner decorativo con animaciones */}
+          <ProjectsBanner
+              title="Proyectos Destacados"
+              subtitle="Una selección de mis trabajos más recientes."
+          />
+
+          {/* Grid de proyectos con animaciones */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {featuredProjects.map((project, idx) => (
                 <ScrollAnimation
@@ -63,9 +61,9 @@ export function Projects() {
                                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")`
                                 }}
                             >
-                              <span className="text-xl sm:text-2xl md:text-3xl font-bold font-[family-name:var(--font-caveat)] uppercase text-primary/70 px-4 text-center">
-                                {project.title}
-                              </span>
+                        <span className="text-xl sm:text-2xl md:text-3xl font-bold font-[family-name:var(--font-caveat)] uppercase text-primary/70 px-4 text-center">
+                          {project.title}
+                        </span>
                             </div>
                         )}
                       </div>
@@ -78,6 +76,9 @@ export function Projects() {
                           {project.stack.slice(0, 3).map((tech, i) => (
                               <span key={i} className="text-xs px-2 py-1 sketch-border bg-muted">{tech}</span>
                           ))}
+                          {project.stack.length > 3 && (
+                              <span className="text-xs px-2 py-1 text-muted-foreground">+{project.stack.length - 3}</span>
+                          )}
                         </div>
                       </div>
                     </Link>
@@ -86,6 +87,7 @@ export function Projects() {
             ))}
           </div>
 
+          {/* Botón para ver todos */}
           <ScrollAnimation direction="up" delay={0.4}>
             <div className="text-center">
               <Link href="/proyectos">
