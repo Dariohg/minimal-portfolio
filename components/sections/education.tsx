@@ -89,7 +89,7 @@ export function Education() {
               <div>
                 <div className="flex items-center gap-2 mb-6 text-primary/80">
                   <Award className="w-5 h-5" />
-                  <h3 className="font-bold uppercase tracking-wider text-sm">Certificaciones Pro</h3>
+                  <h3 className="font-bold uppercase tracking-wider text-sm">Certificaciones</h3>
                 </div>
 
                 {/* Grid de 2 columnas para compactar la altura */}

@@ -11,11 +11,11 @@ import {
   Container,
   Cloud,
   Workflow,
-  Boxes,
   GitBranch,
   Figma,
   Send,
-  Trello,
+  BookOpen,
+  FlaskConical,
 } from "lucide-react"
 import type { SkillCategory } from "@/types"
 
@@ -46,18 +46,17 @@ export const skillCategories: SkillCategory[] = [
       { name: "Docker", level: "beginner", icon: Container },
       { name: "AWS", level: "intermediate", icon: Cloud },
       { name: "CI/CD", level: "beginner", icon: Workflow },
-      { name: "Kubernetes", level: "beginner", icon: Boxes },
-      { name: "Vercel", level: "beginner", icon: Triangle },
+      { name: "Vercel", level: "intermediate", icon: Triangle },
     ],
   },
   {
     category: "Herramientas",
     skills: [
       { name: "Git", level: "advanced", icon: GitBranch },
-      { name: "VS Code", level: "advanced", icon: Code },
       { name: "Figma", level: "advanced", icon: Figma },
+      { name: "Storybook", level: "intermediate", icon: BookOpen },
+      { name: "Jest", level: "intermediate", icon: FlaskConical },
       { name: "Postman", level: "advanced", icon: Send },
-      { name: "Jira", level: "advanced", icon: Trello },
     ],
   },
 ]

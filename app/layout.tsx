@@ -5,7 +5,7 @@ import { Suspense } from "react"
 import "./globals.css"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import {CustomCursor} from "@/components/ui/custom-cursor";
-
+import { Toaster } from "@/components/ui/toaster"
 
 const caveat = Caveat({
     subsets: ["latin"],
@@ -39,6 +39,7 @@ export default function RootLayout({
         <SmoothScroll>
             <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         </SmoothScroll>
+        <Toaster />
         </body>
         </html>
     )
