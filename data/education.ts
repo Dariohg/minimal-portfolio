@@ -3,7 +3,7 @@ import type { Education } from "@/types"
 export const education: Education[] = [
   {
     institution: "Universidad Politecnica De Chiapas",
-    degree: "Ingeniería en Desarrollo de Software",
+    degree: "Ingeniería en Software",
     period: "2022 - 2025",
     description: "Especialización en desarrollo de software",
     type: "degree",

@@ -4,8 +4,9 @@ import { Caveat, Inter } from "next/font/google"
 import { Suspense } from "react"
 import "./globals.css"
 import { SmoothScroll } from "@/components/smooth-scroll"
-import {CustomCursor} from "@/components/ui/custom-cursor";
+import { CustomCursor } from "@/components/ui/custom-cursor"
 import { Toaster } from "@/components/ui/toaster"
+import { ThemeTransitionProvider } from "@/components/ui/theme-transition"
 
 const caveat = Caveat({
     subsets: ["latin"],
@@ -35,11 +36,13 @@ export default function RootLayout({
             className={`${inter.variable} ${caveat.variable} font-sans antialiased`}
             suppressHydrationWarning
         >
-        <CustomCursor />
-        <SmoothScroll>
-            <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        </SmoothScroll>
-        <Toaster />
+        <ThemeTransitionProvider>
+            <CustomCursor />
+            <SmoothScroll>
+                <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+            </SmoothScroll>
+            <Toaster />
+        </ThemeTransitionProvider>
         </body>
         </html>
     )

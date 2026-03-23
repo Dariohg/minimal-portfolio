@@ -5,11 +5,13 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { Magnetic } from "@/components/ui/magnetic"
+import { useThemeTransition } from "@/components/ui/theme-transition"
 
 export function Header() {
   const [isDark, setIsDark] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { triggerTransition } = useThemeTransition()
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark")
@@ -23,8 +25,10 @@ export function Header() {
   }, [])
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark")
-    setIsDark(!isDark)
+    triggerTransition(!isDark, () => {
+      document.documentElement.classList.toggle("dark")
+      setIsDark((prev) => !prev)
+    })
   }
 
   const navLinks = [
