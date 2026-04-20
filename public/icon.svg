@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0a0b14"/>
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text
+    x="16"
+    y="22"
+    text-anchor="middle"
+    font-family="monospace"
+    font-weight="bold"
+    font-size="14"
+    fill="#cc44cc"
+    filter="url(#glow)"
+  >&lt;/&gt;</text>
+</svg>

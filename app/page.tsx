@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
+import { HeroCTA } from "@/components/hero-cta"
 import { About } from "@/components/about"
 import { Skills } from "@/components/sections/skills"
 import { Projects } from "@/components/sections/projects"
@@ -18,6 +19,7 @@ export default function Home() {
             <Header />
             <main className="relative z-10">
                 <Hero />
+                <HeroCTA />
                 <VelocityScroll />
                 <About />
                 <Skills />

@@ -3,75 +3,105 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   ZAUN / UNDERCITY — Arcane Color System
+   Dark mode = Zaun (default via next-themes dark class)
+   Light mode = Piltover (elegant, warm parchment)
+   ============================================================ */
+
 :root {
-  --background: oklch(0.99 0.01 85);
-  --foreground: oklch(0.15 0.01 285);
-  --card: oklch(0.98 0.01 85);
-  --card-foreground: oklch(0.15 0.01 285);
-  --popover: oklch(0.99 0.01 85);
-  --popover-foreground: oklch(0.15 0.01 285);
-  --primary: oklch(0.15 0.01 285);
-  --primary-foreground: oklch(0.99 0.01 85);
-  --secondary: oklch(0.95 0.01 85);
-  --secondary-foreground: oklch(0.15 0.01 285);
-  --muted: oklch(0.96 0.01 85);
-  --muted-foreground: oklch(0.5 0.01 285);
-  --accent: oklch(0.94 0.01 85);
-  --accent-foreground: oklch(0.15 0.01 285);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0.01 85);
-  --border: oklch(0.2 0.01 285);
-  --input: oklch(0.9 0.01 85);
-  --ring: oklch(0.15 0.01 285);
+  /* Piltover — light mode (warm cream, deep inks) */
+  --background: oklch(0.97 0.008 80);
+  --foreground: oklch(0.15 0.02 280);
+
+  --card: oklch(0.995 0.004 80);
+  --card-foreground: oklch(0.15 0.02 280);
+
+  --popover: oklch(0.995 0.004 80);
+  --popover-foreground: oklch(0.15 0.02 280);
+
+  /* Primary: magenta profundo — tinta, no neón */
+  --primary: oklch(0.48 0.22 320);
+  --primary-foreground: oklch(0.98 0.005 320);
+
+  /* Secondary: teal oscuro */
+  --secondary: oklch(0.42 0.18 195);
+  --secondary-foreground: oklch(0.98 0.005 195);
+
+  /* Muted: gris cálido sutil */
+  --muted: oklch(0.93 0.008 80);
+  --muted-foreground: oklch(0.45 0.02 280);
+
+  /* Accent: púrpura profundo */
+  --accent: oklch(0.40 0.16 285);
+  --accent-foreground: oklch(0.98 0.005 285);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 25);
+
+  /* Borders: cálidos, muy sutiles */
+  --border: oklch(0.88 0.01 80);
+  --input: oklch(0.88 0.01 80);
+  --ring: oklch(0.48 0.22 320);
   --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.95 0.006 80);
+  --sidebar-foreground: oklch(0.15 0.02 280);
+  --sidebar-primary: oklch(0.48 0.22 320);
+  --sidebar-primary-foreground: oklch(0.98 0.005 320);
+  --sidebar-accent: oklch(0.93 0.008 80);
+  --sidebar-accent-foreground: oklch(0.15 0.02 280);
+  --sidebar-border: oklch(0.88 0.01 80);
+  --sidebar-ring: oklch(0.48 0.22 320);
+
+  --chart-1: oklch(0.48 0.22 320);
+  --chart-2: oklch(0.42 0.18 195);
+  --chart-3: oklch(0.40 0.16 285);
+  --chart-4: oklch(0.55 0.22 25);
+  --chart-5: oklch(0.50 0.18 140);
+
+  /* Easing curves — Arcane motion language */
+  --ease-zaun: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-shimmer: cubic-bezier(0.4, 0, 0.15, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .dark {
-  --background: oklch(0.12 0.01 285);
-  --foreground: oklch(0.96 0.01 85);
-  --card: oklch(0.14 0.01 285);
-  --card-foreground: oklch(0.96 0.01 85);
-  --popover: oklch(0.12 0.01 285);
-  --popover-foreground: oklch(0.96 0.01 85);
-  --primary: oklch(0.96 0.01 85);
-  --primary-foreground: oklch(0.12 0.01 285);
-  --secondary: oklch(0.2 0.01 285);
-  --secondary-foreground: oklch(0.96 0.01 85);
-  --muted: oklch(0.18 0.01 285);
-  --muted-foreground: oklch(0.6 0.01 285);
-  --accent: oklch(0.22 0.01 285);
-  --accent-foreground: oklch(0.96 0.01 85);
-  --destructive: oklch(0.5 0.2 27.325);
-  --destructive-foreground: oklch(0.96 0.01 85);
-  --border: oklch(0.8 0.01 85);
-  --input: oklch(0.22 0.01 285);
-  --ring: oklch(0.6 0.01 85);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  /* Zaun Undercity — dark mode */
+  --background: oklch(0.08 0.02 280);
+  --foreground: oklch(0.92 0.02 80);
+  --card: oklch(0.11 0.03 275);
+  --card-foreground: oklch(0.92 0.02 80);
+  --popover: oklch(0.11 0.03 275);
+  --popover-foreground: oklch(0.92 0.02 80);
+  --primary: oklch(0.72 0.28 320);
+  --primary-foreground: oklch(0.08 0.02 280);
+  --secondary: oklch(0.65 0.25 195);
+  --secondary-foreground: oklch(0.08 0.02 280);
+  --muted: oklch(0.16 0.03 275);
+  --muted-foreground: oklch(0.55 0.04 280);
+  --accent: oklch(0.58 0.22 285);
+  --accent-foreground: oklch(0.92 0.02 80);
+  --destructive: oklch(0.65 0.25 25);
+  --destructive-foreground: oklch(0.92 0.02 80);
+  --border: oklch(0.25 0.06 280);
+  --input: oklch(0.14 0.03 275);
+  --ring: oklch(0.72 0.28 320);
+
+  --sidebar: oklch(0.10 0.02 280);
+  --sidebar-foreground: oklch(0.92 0.02 80);
+  --sidebar-primary: oklch(0.72 0.28 320);
+  --sidebar-primary-foreground: oklch(0.08 0.02 280);
+  --sidebar-accent: oklch(0.16 0.03 275);
+  --sidebar-accent-foreground: oklch(0.92 0.02 80);
+  --sidebar-border: oklch(0.25 0.06 280);
+  --sidebar-ring: oklch(0.72 0.28 320);
+
+  --chart-1: oklch(0.72 0.28 320);
+  --chart-2: oklch(0.65 0.25 195);
+  --chart-3: oklch(0.58 0.22 285);
+  --chart-4: oklch(0.65 0.25 25);
+  --chart-5: oklch(0.60 0.20 140);
 }
 
 @theme inline {
@@ -117,35 +147,94 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    /* Canvas texture — two noise layers for linen/paper feel */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='canvas'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23canvas)' opacity='0.04'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23grain)' opacity='0.025'/%3E%3C/svg%3E");
+    background-size: 400px 400px, 200px 200px;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  /* Hand-drawn sketch effect styles */
+  /* ============================================================
+     SCROLLBAR — Industrial Zaun style
+     ============================================================ */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 0;
+    box-shadow: 0 0 6px oklch(0.72 0.28 320 / 0.5);
+  }
+
+  /* ============================================================
+     SELECTION
+     ============================================================ */
+  ::selection {
+    background: oklch(0.72 0.28 320 / 0.3);
+    color: var(--foreground);
+  }
+
+  /* ============================================================
+     NEON TEXT EFFECTS
+     ============================================================ */
+  .neon-magenta {
+    color: var(--primary);
+    text-shadow:
+      0 0 7px oklch(0.72 0.28 320 / 0.8),
+      0 0 15px oklch(0.72 0.28 320 / 0.5),
+      0 0 30px oklch(0.72 0.28 320 / 0.3);
+  }
+
+  .neon-cyan {
+    color: var(--secondary);
+    text-shadow:
+      0 0 7px oklch(0.65 0.25 195 / 0.8),
+      0 0 15px oklch(0.65 0.25 195 / 0.5),
+      0 0 30px oklch(0.65 0.25 195 / 0.3);
+  }
+
+  /* ============================================================
+     SKETCH / HAND-DRAWN BORDERS — Zaun graffiti aesthetic
+     ============================================================ */
   .sketch-border {
-    border: 2px solid currentColor;
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    border: 3px solid currentColor;
+    border-radius: 255px 8px 225px 8px / 8px 225px 8px 255px;
     position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s var(--ease-zaun);
   }
 
   .sketch-border::before {
-    content: "";
+    content: '';
     position: absolute;
-    inset: -2px;
+    inset: -3px;
     border: 2px solid currentColor;
-    border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;
-    opacity: 0.5;
+    border-radius: 8px 255px 8px 225px / 225px 8px 255px 8px;
+    opacity: 0.3;
     pointer-events: none;
   }
 
   .sketch-border:hover {
     transform: translateY(-2px);
     box-shadow: 4px 4px 0 0 currentColor;
+  }
+
+  /* Heavy variant — for featured/highlighted elements */
+  .sketch-border-heavy {
+    border: 4px solid currentColor;
+    border-radius: 3px 12px 2px 14px / 14px 2px 12px 3px;
+    box-shadow:
+      3px 3px 0 0 var(--primary),
+      6px 6px 0 0 color-mix(in oklch, var(--primary) 20%, transparent);
   }
 
   .sketch-underline {
@@ -168,7 +257,7 @@
   .sketch-circle {
     border-radius: 50% 48% 52% 50% / 50% 52% 48% 50%;
     border: 2px solid currentColor;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s var(--ease-zaun);
   }
 
   .sketch-circle:hover {
@@ -178,13 +267,13 @@
   .sketch-box {
     border: 2px solid currentColor;
     border-radius: 8px 12px 10px 14px / 14px 10px 12px 8px;
-    box-shadow: 2px 2px 0 0 currentColor, 4px 4px 0 0 rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 2px 2px 0 0 currentColor, 4px 4px 0 0 oklch(0 0 0 / 0.1);
+    transition: all 0.3s var(--ease-zaun);
   }
 
   .sketch-box:hover {
     transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0 0 currentColor, 2px 2px 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0 0 currentColor, 2px 2px 0 0 oklch(0 0 0 / 0.1);
   }
 
   .hand-drawn-line {
@@ -202,156 +291,333 @@
     transform: scaleY(1) translateY(0);
   }
 
-  /* Agregando animaciones personalizadas */
+  /* ============================================================
+     GRAFFITI / TEXTURE UTILITIES
+     ============================================================ */
+  .graffiti-bg {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, oklch(0.72 0.28 320 / 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.65 0.25 195 / 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 60% 80%, oklch(0.58 0.22 285 / 0.03) 0%, transparent 50%);
+  }
+
+  .graffiti-line {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--primary) 20%,
+      var(--secondary) 50%,
+      var(--primary) 80%,
+      transparent 100%
+    );
+    filter: blur(0.5px);
+    opacity: 0.6;
+  }
+
+  /* ============================================================
+     HEXTECH GLOW — Shimmer energy effect
+     ============================================================ */
+  .hextech-glow {
+    box-shadow:
+      0 0 10px oklch(0.65 0.25 195 / 0.3),
+      0 0 20px oklch(0.65 0.25 195 / 0.15),
+      inset 0 0 10px oklch(0.65 0.25 195 / 0.05);
+  }
+
+  .hextech-glow:hover {
+    box-shadow:
+      0 0 15px oklch(0.65 0.25 195 / 0.5),
+      0 0 30px oklch(0.65 0.25 195 / 0.25),
+      inset 0 0 15px oklch(0.65 0.25 195 / 0.1);
+    transition: box-shadow 0.3s var(--ease-shimmer);
+  }
+
+  /* ============================================================
+     EXISTING ANIMATIONS — preserved
+     ============================================================ */
   @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
   }
 
   @keyframes float-slow {
-    0%,
-    100% {
-      transform: translateY(0px) translateX(0px);
-    }
-    50% {
-      transform: translateY(-30px) translateX(10px);
-    }
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-30px) translateX(10px); }
   }
 
   @keyframes wiggle {
-    0%,
-    100% {
-      transform: rotate(-3deg);
-    }
-    50% {
-      transform: rotate(3deg);
-    }
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
   }
 
   @keyframes draw-line {
-    from {
-      stroke-dashoffset: 1000;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
   }
 
   @keyframes pulse-glow {
-    0%,
-    100% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
   }
 
   @keyframes bounce-subtle {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   @keyframes sketch-draw {
-    from {
-      clip-path: inset(0 100% 0 0);
-    }
-    to {
-      clip-path: inset(0 0 0 0);
-    }
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
   }
 
   @keyframes rotate-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  /* ============================================================
+     ARCANE ANIMATIONS — new
+     ============================================================ */
+  @keyframes hextech-pulse {
+    0%, 100% { opacity: 0.6; filter: blur(0px); }
+    50% { opacity: 1; filter: blur(1px); }
   }
 
-  .animate-float-slow {
-    animation: float-slow 8s ease-in-out infinite;
+  @keyframes graffiti-flicker {
+    0%, 95%, 100% { opacity: 1; }
+    96% { opacity: 0.8; }
+    97% { opacity: 1; }
+    98% { opacity: 0.85; }
   }
 
-  .animate-wiggle {
-    animation: wiggle 2s ease-in-out infinite;
+  /* ============================================================
+     ANIMATION UTILITY CLASSES
+     ============================================================ */
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+  .animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+  .animate-bounce-subtle { animation: bounce-subtle 2s ease-in-out infinite; }
+  .animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
+  .animate-hextech-pulse { animation: hextech-pulse 3s ease-in-out infinite; }
+  .animate-flicker { animation: graffiti-flicker 4s ease-in-out infinite; }
+
+  /* ============================================================
+     PAINTERLY TEXTURE UTILITIES — oil, watercolor, gouache
+     ============================================================ */
+
+  /* Watercolor wash background — for cards and sections */
+  .watercolor-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  .watercolor-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, oklch(0.72 0.28 320 / 0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 80% 70%, oklch(0.65 0.25 195 / 0.03) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 50% 50%, oklch(0.58 0.22 285 / 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(20px);
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
+  /* Sketch lines background — pencil hatching texture */
+  .sketch-lines-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cline x1='0' y1='25' x2='100' y2='23' stroke='oklch(0.92 0.02 80 / 0.015)' stroke-width='0.5'/%3E%3Cline x1='0' y1='50' x2='100' y2='52' stroke='oklch(0.92 0.02 80 / 0.012)' stroke-width='0.5'/%3E%3Cline x1='0' y1='75' x2='100' y2='74' stroke='oklch(0.92 0.02 80 / 0.01)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
   }
 
-  .animate-bounce-subtle {
-    animation: bounce-subtle 2s ease-in-out infinite;
+  /* Paint splatter — gradient separator with organic edge */
+  .paint-splatter {
+    position: relative;
+    height: 40px;
+    overflow: visible;
+  }
+  .paint-splatter::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(600px, 80vw);
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(0.72 0.28 320 / 0.15) 10%,
+      oklch(0.72 0.28 320 / 0.4)  30%,
+      oklch(0.65 0.25 195 / 0.5)  50%,
+      oklch(0.72 0.28 320 / 0.4)  70%,
+      oklch(0.72 0.28 320 / 0.15) 90%,
+      transparent 100%
+    );
+    filter: blur(1px);
+    clip-path: polygon(
+      0% 40%, 2% 0%, 5% 60%, 8% 20%, 12% 80%,
+      15% 30%, 20% 70%, 25% 10%, 30% 90%,
+      35% 20%, 40% 60%, 45% 0%, 50% 100%,
+      55% 10%, 60% 70%, 65% 30%, 70% 80%,
+      75% 20%, 80% 60%, 85% 40%, 88% 80%,
+      92% 20%, 95% 60%, 98% 30%, 100% 50%,
+      100% 60%, 98% 40%, 95% 70%, 92% 30%,
+      88% 90%, 85% 50%, 80% 70%, 75% 30%,
+      70% 90%, 65% 40%, 60% 80%, 55% 20%,
+      50% 100%, 45% 10%, 40% 70%, 35% 30%,
+      30% 100%, 25% 20%, 20% 80%, 15% 40%,
+      12% 90%, 8% 30%, 5% 70%, 2% 10%, 0% 60%
+    );
   }
 
-  .animate-rotate-slow {
-    animation: rotate-slow 20s linear infinite;
-  }
-
-  /* Animaciones de scroll */
+  /* Scroll reveal utilities */
   .fade-in-up {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-
-  .fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
   .fade-in-left {
     opacity: 0;
     transform: translateX(-30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-
-  .fade-in-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .fade-in-left.visible { opacity: 1; transform: translateX(0); }
 
   .fade-in-right {
     opacity: 0;
     transform: translateX(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-
-  .fade-in-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .fade-in-right.visible { opacity: 1; transform: translateX(0); }
 
   .scale-in {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
+  .scale-in.visible { opacity: 1; transform: scale(1); }
 
-  .scale-in.visible {
-    opacity: 1;
-    transform: scale(1);
+  /* ============================================================
+     PILTOVER — Light mode overrides
+     Neon → deep ink. Glow → refined shadow. Dark palette → pale.
+     ============================================================ */
+
+  /* Scrollbar */
+  html:not(.dark) ::-webkit-scrollbar-thumb {
+    box-shadow: none;
+  }
+
+  /* Selection */
+  html:not(.dark) ::selection {
+    background: oklch(0.48 0.22 320 / 0.15);
+  }
+
+  /* Logo text — shared by header + footer */
+  .logo-text {
+    color: oklch(0.92 0.08 320);
+    text-shadow: 0 0 10px oklch(0.72 0.28 320 / 0.5), 0 0 20px oklch(0.72 0.28 320 / 0.2);
+  }
+  html:not(.dark) .logo-text {
+    color: oklch(0.48 0.22 320);
+    text-shadow: none;
+  }
+
+  /* Subtitle glow (hero h2) */
+  .subtitle-glow {
+    text-shadow: 0 0 20px oklch(0.65 0.25 195 / 0.4);
+  }
+  html:not(.dark) .subtitle-glow {
+    text-shadow: none;
+  }
+
+  /* Neon → deep ink */
+  html:not(.dark) .neon-magenta {
+    color: oklch(0.48 0.22 320);
+    text-shadow: none;
+  }
+  html:not(.dark) .neon-cyan {
+    color: oklch(0.38 0.18 195);
+    text-shadow: none;
+  }
+
+  /* Hextech glow → refined shadow */
+  html:not(.dark) .hextech-glow {
+    box-shadow:
+      0 0 0 1px oklch(0.48 0.22 320 / 0.25),
+      2px 2px 8px oklch(0.48 0.22 320 / 0.08);
+    filter: none;
+  }
+  html:not(.dark) .hextech-glow:hover {
+    box-shadow:
+      0 0 0 1px oklch(0.48 0.22 320 / 0.4),
+      2px 2px 16px oklch(0.48 0.22 320 / 0.12);
+    transition: box-shadow 0.3s var(--ease-shimmer);
+  }
+
+  /* graffiti-bg → textura sutil sobre blanco */
+  html:not(.dark) .graffiti-bg {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, oklch(0.48 0.22 320 / 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.42 0.18 195 / 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 60% 80%, oklch(0.40 0.16 285 / 0.03) 0%, transparent 50%);
+  }
+
+  /* graffiti-line → más visible en modo claro */
+  html:not(.dark) .graffiti-line {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(0.48 0.22 320 / 0.7) 20%,
+      oklch(0.42 0.18 195 / 0.8) 50%,
+      oklch(0.48 0.22 320 / 0.7) 80%,
+      transparent 100%
+    );
+    filter: blur(0.5px);
+    opacity: 0.9;
+  }
+
+  /* sketch-border en light mode */
+  html:not(.dark) .sketch-border,
+  html:not(.dark) .sketch-border-heavy {
+    border-color: oklch(0.72 0.06 280 / 0.45);
+  }
+  html:not(.dark) .sketch-border-heavy {
+    box-shadow:
+      3px 3px 0 0 var(--primary),
+      6px 6px 0 0 color-mix(in oklch, var(--primary) 12%, transparent);
+  }
+
+  /* animate-flicker → sin parpadeo en light mode */
+  html:not(.dark) .animate-flicker {
+    animation: none;
+    opacity: 0.8;
+  }
+
+  /* Level block empty state */
+  .level-block-empty {
+    background: oklch(0.25 0.03 280 / 0.3);
+  }
+  html:not(.dark) .level-block-empty {
+    background: oklch(0.82 0.02 280 / 0.7);
+  }
+
+  /* Status dot secondary glow */
+  .status-dot-glow {
+    box-shadow: 0 0 6px oklch(0.65 0.25 195 / 0.6);
+  }
+  html:not(.dark) .status-dot-glow {
+    box-shadow: 0 0 4px oklch(0.42 0.18 195 / 0.4);
   }
 }
 
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
 @media (pointer: fine) {
   body {
     cursor: none;
@@ -361,3 +627,16 @@
   }
 }
 
+/* ============================================================
+   REDUCED MOTION — accessibility
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

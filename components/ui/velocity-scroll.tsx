@@ -15,9 +15,10 @@ import { wrap } from "@motionone/utils";
 interface ParallaxProps {
     children: string;
     baseVelocity: number;
+    colorClass: string;
 }
 
-function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
+function ParallaxText({ children, baseVelocity = 100, colorClass }: ParallaxProps) {
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();
     const scrollVelocity = useVelocity(scrollY);
@@ -48,7 +49,10 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
     return (
         <div className="overflow-hidden m-0 whitespace-nowrap flex flex-nowrap">
-            <motion.div className="font-[family-name:var(--font-caveat)] font-bold uppercase text-4xl md:text-6xl flex flex-nowrap gap-8 text-muted-foreground/30" style={{ x }}>
+            <motion.div
+                className={`font-[family-name:var(--font-caveat)] font-bold uppercase text-4xl md:text-6xl flex flex-nowrap gap-8 ${colorClass}`}
+                style={{ x }}
+            >
                 <span className="block mr-8">{children} </span>
                 <span className="block mr-8">{children} </span>
                 <span className="block mr-8">{children} </span>
@@ -64,9 +68,15 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export function VelocityScroll() {
     return (
-        <section className="py-10 overflow-hidden">
-            <ParallaxText baseVelocity={-2}>Desarrollador FrontEnd • React • Next.js • Node.js •</ParallaxText>
-            <ParallaxText baseVelocity={2}>Arquitectura de Software • Diseño UI/UX • Clean Code •</ParallaxText>
+        <section className="py-10 overflow-hidden graffiti-bg">
+            <div className="graffiti-line opacity-30" />
+            <ParallaxText baseVelocity={-2} colorClass="text-primary/25">
+                Frontend Dev • React • Next.js • TypeScript • Framer Motion •
+            </ParallaxText>
+            <ParallaxText baseVelocity={2} colorClass="text-secondary/20">
+                UI/UX • Animaciones • Diseño de Sistemas • Clean Code • Performance •
+            </ParallaxText>
+            <div className="graffiti-line opacity-30" />
         </section>
     );
 }
